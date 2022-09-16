@@ -22,14 +22,22 @@
     vertical-align: middle;
 }
 
-/*absoluteを消せばヘッダーが右端によるが背景画像が下に来てしまう */
 .Header{
     padding-top: 20px;
     padding-bottom: 20px;
     position: absolute;
+    width:100%;
 }
 
-/*ここの子要素を並べてspace-betweenを適用しているがうまくいっていない*/
+@media screen and (max-width:1080px){
+.Header{
+    padding-top:15px;
+    padding-bottom:15px;
+    background-color: #fff;
+    z-index:10;
+}
+}
+
 .header-container{
     display: flex;
     justify-content:space-between;
@@ -42,16 +50,41 @@
     display: inline-flex;
 }
 
+@media screen and (max-width:767px){
+.header-container{
+    max-width:100%;
+    margin:0 20px;
+}
+}
+
 .logo{
     padding-top: 10px;
 }
 .logo:hover{
     opacity: 0.6;
 }
-.logo-image{
+.logo-image-pc{
     display: block;
     height: 20px;
     width: auto;
+}
+
+@media screen and (max-width: 767px){
+.logo-image-pc{
+    display:none;
+}
+}
+
+.logo-image-sp{
+    display:none;
+    height: 16px;
+    width: auto;
+}
+
+@media screen and (max-width: 767px){
+.logo-image-sp{
+    display: block;
+}
 }
 
 .header-navlist{
